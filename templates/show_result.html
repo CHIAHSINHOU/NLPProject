@@ -1,0 +1,26 @@
+{% extends "layout.html" %} {% block body %}
+<center>
+    {% if adj%}
+    <div style="color: brown;">adjective: {{adj}}</div>
+    {% if output %}
+    <br/>
+    <div style="color: seagreen;"> Maybe you can try: </div>
+    <table class="autowd">
+        
+        <tr><ol>
+        {%- for ch in output %}
+            <li style="color: seagreen;align-items: center;">{{ ch[0] }}</li>
+<!--             <td style="color: seagreen;">{{ ch[0] }}</td>
+            <td style="color: royalblue;">Last Char : </td>
+            <td style="color: royalblue;">{{ ch[1] }}</td>
+            <td style="color: brown;">Next Char : </td>
+            <td style="color: brown;">{{ ch[2] }}</td> -->
+        {%- endfor %}
+        </ol></tr>
+    </table>
+    {% else %}
+    <div style="color: seagreen;"> This is a good adjective </div> 
+    {% endif %}
+    {% endif %}
+</center>
+{% endblock %}
